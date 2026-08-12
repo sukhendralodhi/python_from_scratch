@@ -30,10 +30,24 @@
 # finally:
 #     print("Done processing")
 
-def risky_code():
-    print("Hello World")
+# def risky_code():
+#     print("Hello World")
+
+# try:
+#     risky_code()
+# except Exception as e:
+#     print(f"Something went wrong: {e}")
 
 try:
-    risky_code()
-except Exception as e:
-    print(f"Something went wrong: {e}")
+    number1 = int(input("Enter the number first: "))
+    number2 = int(input("Enter the number second: "))
+
+    result = number1 / number2
+    print(result)
+
+except ValueError:
+    print("Invalid value")
+except ZeroDivisionError:
+    print("Number can not be divided by zero")
+finally:
+    print("Process done")
