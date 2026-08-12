@@ -49,5 +49,5 @@ for fruit in fruits:
 
 numbers = [5,3,8,1]
 result = numbers.sort()
-print(result)
-print(numbers)
+print(result) # this will return None
+print(numbers) # this print sorted array
