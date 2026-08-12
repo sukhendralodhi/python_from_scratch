@@ -13,10 +13,19 @@
 # FileNotFoundError  # trying to open a file that doesn't exist
 
 
+# try:
+#     result = 10 / int(input("Enter a divisor: "))
+#     print(result)
+# except ValueError:
+#     print("Please enter a valid number")
+# except ZeroDivisionError:
+#     print("Can not divided by zero")
+
 try:
-    result = 10 / int(input("Enter a divisor: "))
-    print(result)
+    number = int(input("Enter the number: "))
 except ValueError:
-    print("Please enter a valid number")
-except ZeroDivisionError:
-    print("Can not divided by zero")
+    print("Invalid input")
+else:
+    print(f"Success! You entered {number}")
+finally:
+    print("Done processing")
