@@ -15,10 +15,39 @@
 # print(numbers[2:])
 
 
-fruits = ["apple", "banana", "cherry"]
+# fruits = ["apple", "banana", "cherry"]
 # fruits.append("Mango") # add in end
 # fruits.remove("banana") # remove by value
 # fruits.insert(0, "orange")
 # fruits.pop() # remove last item 
-fruits[0] = "mango"
-print(fruits)
+# fruits[0] = "mango"
+# print(fruits)
+
+# useful list functions 
+
+
+
+# print(len(numbers))
+# print(sorted(numbers))
+# print(numbers.sort())
+# print(max(numbers))
+# print(min(numbers))
+# print(sum(numbers))
+
+
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    if "apple" in fruits:
+        print("Apple found")
+        break
+
+# with index using enumerate()
+
+# for index, fruit in enumerate(fruits):
+#     print(index, fruit)
+
+numbers = [5,3,8,1]
+result = numbers.sort()
+print(result)
+print(numbers)
