@@ -21,11 +21,19 @@
 # except ZeroDivisionError:
 #     print("Can not divided by zero")
 
+# try:
+#     number = int(input("Enter the number: "))
+# except ValueError:
+#     print("Invalid input")
+# else:
+#     print(f"Success! You entered {number}")
+# finally:
+#     print("Done processing")
+
+def risky_code():
+    print("Hello World")
+
 try:
-    number = int(input("Enter the number: "))
-except ValueError:
-    print("Invalid input")
-else:
-    print(f"Success! You entered {number}")
-finally:
-    print("Done processing")
+    risky_code()
+except Exception as e:
+    print(f"Something went wrong: {e}")
