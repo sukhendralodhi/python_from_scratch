@@ -34,9 +34,20 @@ class Car:
     #     print("Hello")
 
 
-c1 = Car()
-c1.accelerate()
+# c1 = Car()
+# c1.accelerate()
 
 
 # Encapsultaion
 # Wrapping the data and code together into a single unit is called encapsulation. It can be achieved by using private variables and methods.
+
+
+class Account:
+    def __init__(self, bal, acc):
+        self.balance = bal
+        self.acc_number = acc
+
+
+acc1 = Account(123456, 4000)
+print(acc1.acc_number)
+print(acc1.balance)
