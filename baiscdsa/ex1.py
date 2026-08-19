@@ -23,6 +23,34 @@ class MyList:
         print(self.A[self.n - 1])
         self.n = self.n - 1
 
+    def clear(self):
+        self.n = 0
+        self.size = 1
+
+    def find(self, item):
+
+        for i in range(self.n):
+            if self.A[i] == item:
+                return i
+
+        return "ValueError - item not in list"
+
+    def insert(self, pos, item):
+        if self.n == self.size:
+            self.__resize(self.size * 2)
+
+        for i in range(self.n, pos, -1):
+            self.A[i] = self.A[i - 1]
+
+        self.A[pos] = item
+        self.n = self.n + 1
+
+    def __delitem__(self, key):
+        for i in range(key, self.n - 1):
+            self.A[i] = self.A[i + 1]
+
+        self.n = self.n - 1
+
     def __getitem__(self, key):
         if 0 <= key < self.n:
             return self.A[key]
@@ -59,6 +87,10 @@ l.append(True)
 l.append(100)
 l.append(900)
 l.append(800)
-l.pop()
-print(len(l))
+# l.pop()
+# l.clear()
+# print(len(l))
+# print(l.find("Hellojj"))
+# l.insert(0, 0)
+del l[3]
 print(l)
