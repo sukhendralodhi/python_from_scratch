@@ -45,11 +45,20 @@ class MyList:
         self.A[pos] = item
         self.n = self.n + 1
 
-    def __delitem__(self, key):
-        for i in range(key, self.n - 1):
-            self.A[i] = self.A[i + 1]
+    def remove(self, item):
+        pos = self.find(item)
 
-        self.n = self.n - 1
+        if type(pos) == int:
+            self.__delitem__(pos)
+        else:
+            return pos
+
+    def __delitem__(self, key):
+        if 0 <= key < self.n:
+            for i in range(key, self.n - 1):
+                self.A[i] = self.A[i + 1]
+
+            self.n = self.n - 1
 
     def __getitem__(self, key):
         if 0 <= key < self.n:
@@ -62,6 +71,34 @@ class MyList:
             self.__resize(self.size * 2)
         self.A[self.n] = item
         self.n = self.n + 1
+
+    def sort(self):
+        for i in range(self.n - 1):
+            for j in range(self.n - 1 - i):
+                if self.A[j] > self.A[j + 1]:
+                    self.A[j], self.A[j + 1] = self.A[j + 1], self.A[j]
+
+    def min(self):
+        if self.n == 0:
+            return "Empty List"
+
+        minimum = self.A[0]
+
+        for i in range(1, self.n):
+            if self.A[i] < minimum:
+                minimum = self.A[i]
+        return minimum
+
+    def max(self):
+        if self.n == 0:
+            return "Empty List"
+
+        max = self.A[0]
+
+        for i in range(1, self.n):
+            if self.A[i] > max:
+                max = self.A[i]
+        return max
 
     def __resize(self, new_capacity):
         # create a new array with new capacity
@@ -82,15 +119,28 @@ class MyList:
 l = MyList()
 # print(type(l))
 # print(l)
-l.append("Hello")
-l.append(True)
-l.append(100)
-l.append(900)
-l.append(800)
+# l.append("Hello")
+# l.append(True)
+# l.append(100)
+# l.append(900)
+# l.append(800)
 # l.pop()
 # l.clear()
 # print(len(l))
 # print(l.find("Hellojj"))
 # l.insert(0, 0)
-del l[3]
+# del l[3000]
+# print(l.remove(1000))
+
+l.append(6)
+l.append(5)
+l.append(3)
+l.append(9)
+l.append(7)
+l.append(2)
 print(l)
+# l.sort()
+# print(l)
+# print(l.sort())
+# print(l.min())
+print(l.max())
