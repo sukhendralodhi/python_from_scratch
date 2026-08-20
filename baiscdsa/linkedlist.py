@@ -82,6 +82,24 @@ class LinkedList:
         # increament n for track how many node in our linked list
         self.n = self.n + 1
 
+    # insert middle
+    def insert_after(self, after, value):
+        new_node = Node(value)
+        curr = self.head
+
+        while curr is not None:
+            if curr.data == after:
+                break
+            curr = curr.next
+
+        # here are two cases
+        # 1. break -> element found -> curr not None
+        if curr is not None:
+            new_node.next = curr.next
+            curr.next = new_node
+        else:
+            return "Item not found"
+
     # Traverse in linked list
     # 1. print
     # def traverse(self):
@@ -115,9 +133,9 @@ L = LinkedList()
 # L.insert_head(2)
 # L.insert_head(3)
 # L.insert_head(4)
-L.append(3)
+# L.append(3)
 # L.append(13)
 # L.append(88)
-
+print(L.insert_after(2, 25))
 print(L)
-print(len(L))
+# print(len(L))
