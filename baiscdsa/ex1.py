@@ -85,6 +85,10 @@ class MyList:
         self.A[self.n] = item
         self.n = self.n + 1
 
+    def merge(self, items):
+        for item in items:
+            self.append(item)
+
     def sort(self):
         for i in range(self.n - 1):
             for j in range(self.n - 1 - i):
@@ -159,12 +163,12 @@ l = MyList()
 # del l[3000]
 # print(l.remove(1000))
 
-l.append(6)
-l.append(5)
-l.append(3)
-l.append(9)
-l.append(7)
-l.append(2)
+# l.append(6)
+# l.append(5)
+# l.append(3)
+# l.append(9)
+# l.append(7)
+# l.append(2)
 # print(l)
 # l.sort()
 # print(l)
@@ -175,4 +179,16 @@ l.append(2)
 # l.extend([10, 11, 12])
 # print(l[-1])
 # print(l)
-print(l[:4])
+# print(l[4])
+
+l.append(6)
+l.append(5)
+l.append(3)
+l.append(9)
+l.append(7)
+l.append(2)
+
+A = [1, 4, 7]
+B = [2, 3, 6]
+l.merge(A)
+print(l)
