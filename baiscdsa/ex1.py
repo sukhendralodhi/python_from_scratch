@@ -61,6 +61,15 @@ class MyList:
             self.n = self.n - 1
 
     def __getitem__(self, key):
+        # print(type(key))
+        if isinstance(key, slice):
+            start, stop, step = key.indices(self.n)
+            result = MyList()
+
+            for i in range(start, stop, step):
+                result.append(self.A[i])
+
+            return result
 
         if key < 0:
             key = self.n + key
@@ -164,5 +173,6 @@ l.append(2)
 # print(l.max())
 # print(l.sum())
 # l.extend([10, 11, 12])
-print(l[-1])
-print(l)
+# print(l[-1])
+# print(l)
+print(l[:4])
