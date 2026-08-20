@@ -61,6 +61,10 @@ class MyList:
             self.n = self.n - 1
 
     def __getitem__(self, key):
+
+        if key < 0:
+            key = self.n + key
+
         if 0 <= key < self.n:
             return self.A[key]
         else:
@@ -100,6 +104,20 @@ class MyList:
                 max = self.A[i]
         return max
 
+    def sum(self):
+        if self.n == 0:
+            return "Empty List"
+
+        total = 0
+        for i in range(self.n):
+            total += self.A[i]
+
+        return total
+
+    def extend(self, items):
+        for item in items:
+            self.append(item)
+
     def __resize(self, new_capacity):
         # create a new array with new capacity
         B = self._make_array(new_capacity)
@@ -138,9 +156,13 @@ l.append(3)
 l.append(9)
 l.append(7)
 l.append(2)
-print(l)
+# print(l)
 # l.sort()
 # print(l)
 # print(l.sort())
 # print(l.min())
-print(l.max())
+# print(l.max())
+# print(l.sum())
+# l.extend([10, 11, 12])
+print(l[-1])
+print(l)
