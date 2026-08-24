@@ -117,25 +117,48 @@ class LinkedList:
             curr = curr.next
         return result[:-2]  # removing last arrow from result
 
+    # Delete in linked list
+    def clear(self):
+        self.head = None
+        self.n = 0
 
-# Delete in linked list
-# 1. Head
-# 2. Teal (pop called in list)
-# 3. Value (remove called in list )
-# 4. Index
+    # 1. Head
+    def delete_head(self):
+
+        # check if LL already empty
+        if self.head == None:
+            return "Linked list is empty"
+
+        # here we are assigning current head of curr head next value
+        self.head = self.head.next
+        self.n = self.n - 1
+
+    # 2. Teal (pop called in list)
+    # 3. Value (remove called in list )
+    # 4. Index
+
 
 # Search
 # 1. Value
 # 2. Index
 
 L = LinkedList()
-# L.insert_head(1)
-# L.insert_head(2)
-# L.insert_head(3)
-# L.insert_head(4)
+L.insert_head(1)
+L.insert_head(2)
+L.insert_head(3)
+L.insert_head(4)
 # L.append(3)
 # L.append(13)
 # L.append(88)
-print(L.insert_after(2, 25))
+# print(L.insert_after(2, 25))
+L.delete_head()
+L.delete_head()
+L.delete_head()
+L.delete_head()
+print(L.delete_head())
+# L.clear()
 print(L)
+print(L.n)
+
+# print(L)
 # print(len(L))
