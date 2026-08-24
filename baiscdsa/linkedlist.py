@@ -134,6 +134,31 @@ class LinkedList:
         self.n = self.n - 1
 
     # 2. Teal (pop called in list)
+    def pop(self):
+
+        # CASE 1: check if LL already empty
+        if self.head is None:
+            return "Linked list is empty"
+
+        # CASE 2: if LL have only one node
+        if self.head.next is None:
+            value = self.head.data
+            self.head = None
+            self.n = self.n - 1
+            return value
+
+        # CASE 3: if LL have multiple nodes
+        curr = self.head
+
+        # here we are finding second last item because we want to remove last item from LL
+        while curr.next.next is not None:
+            curr = curr.next
+
+        value = curr.next.data
+        curr.next = None
+        self.n = self.n - 1
+        return value
+
     # 3. Value (remove called in list )
     # 4. Index
 
@@ -142,23 +167,30 @@ class LinkedList:
 # 1. Value
 # 2. Index
 
+
+# L.append(3)
+# L.append(13)
+# L.append(88)
+# print(L.insert_after(2, 25))
+# L.delete_head()
+# L.delete_head()
+# L.delete_head()
+# L.delete_head()
+# print(L.delete_head())
+# L.clear()
+# print(L)
+# print(L.n)
 L = LinkedList()
 L.insert_head(1)
 L.insert_head(2)
 L.insert_head(3)
 L.insert_head(4)
-# L.append(3)
-# L.append(13)
-# L.append(88)
-# print(L.insert_after(2, 25))
-L.delete_head()
-L.delete_head()
-L.delete_head()
-L.delete_head()
-print(L.delete_head())
-# L.clear()
+print(L.pop())
+print(L.pop())
+print(L.pop())
+print(L.pop())
+print(L.pop())
 print(L)
-print(L.n)
 
 # print(L)
 # print(len(L))
