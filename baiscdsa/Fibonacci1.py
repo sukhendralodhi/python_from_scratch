@@ -1,0 +1,14 @@
+def fibonacci(n):
+    result = []
+
+    a = 0
+    b = 1
+
+    for i in range(n):
+        result.append(a)
+        a, b = b, a + b
+
+    return result
+
+
+print(fibonacci(10))
