@@ -62,10 +62,77 @@ def reverse_array(nums):
 # print(reverse_array([2, 5, 6, 8, 4, 1, 9]))
 
 
-def reverse_array1(nums):
+def reverse_to_new_list(arr):
+    reversed_arr = []
+    for i in range(len(arr) - 1, -1, -1):
+        reversed_arr.append(arr[i])
+        print(i)
+    return reversed_arr
 
-    for i in range(len(nums), 0):
-        print(nums[i])
+
+# print(reverse_to_new_list([2, 5, 6, 8, 4, 1, 9]))
 
 
-print(reverse_array1([2, 5, 6, 8, 4, 1, 9]))
+def find_element(nums, target):
+
+    for i in range(0, len(nums)):
+
+        if target == nums[i]:
+            return i
+
+    return -1
+
+
+# print(find_element([2, 5, 6, 8, 4, 1, 9], 1))
+
+
+def count_occurrences(arr, target):
+
+    count = 0
+
+    for i in range(0, len(arr)):
+
+        if target == arr[i]:
+            count = count + 1
+
+    return count
+
+
+# print(count_occurrences([1, 2, 2, 3, 2, 4], 6))
+
+
+def is_sorted(arr):
+
+    if len(arr) <= 1:
+        return True
+
+    for i in range(len(arr) - 1):
+
+        if arr[i] > arr[i + 1]:
+            return False
+
+    return True
+
+
+# print(is_sorted([1, 2, 5, 8]))
+
+
+def second_largest(arr):
+
+    largest = arr[0]
+    second = arr[1]
+
+    for i in range(2, len(arr)):
+
+        if largest > arr[i]:
+
+            second = largest
+            largest = arr[i]
+
+        elif arr[i] > second:
+            second = arr[i]
+
+    return second
+
+
+print(second_largest([10, 5, 20, 8, 15]))
