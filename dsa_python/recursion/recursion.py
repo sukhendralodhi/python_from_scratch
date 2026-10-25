@@ -49,3 +49,11 @@ def myFun(num):
 
 
 myFun(1)
+
+
+# Can function call itself ? The answer is YES - Recursion
+# ------------------------------------------------------------------
+# Functions stays in memory until resolved
+# Only when a function finishes the execution then only it comes out of programme to the line it was called from and get deleted from stack
+
+# RECURSION - A function calling itself
