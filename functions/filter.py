@@ -29,4 +29,25 @@ names_filter = list(filter(lambda n: len(n) > 5, names))
 
 even_greater_than_five = list(filter(lambda x: x % 2 == 0 and x > 5, numbers))
 
-print(even_greater_than_five)
+# print(even_greater_than_five)
+
+people = [
+    {"name": "Sukhendra", "age": 26},
+    {"name": "Somakshi", "age": 20},
+    {"name": "Gautam", "age": 35},
+    {"name": "Kajal", "age": 18},
+]
+
+
+def check_age(person):
+
+    return person["age"] > 25
+
+
+res = list(filter(check_age, people))
+
+# print(res)
+
+result = list(filter(lambda person: person["age"] > 18, people))
+
+print(result)
