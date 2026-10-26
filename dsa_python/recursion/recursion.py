@@ -48,7 +48,7 @@ def myFun(num):
     myFun(num + 1)
 
 
-myFun(1)
+# myFun(1)
 
 
 # Can function call itself ? The answer is YES - Recursion
@@ -74,7 +74,53 @@ def factorial(n):
     return ans
 
 
-print(factorial(5))
+# print(factorial(5))
 
 
-# No we will not be making boxes or function every time 
+# No we will not be making boxes or function every time
+
+
+def power2(n):
+
+    if n == 0:
+        return 1
+
+    sAnswer = power2(n - 1)
+    ans = 2 * sAnswer
+
+    return ans
+
+
+# print(power2(5))
+
+
+# def digit(num):
+
+#     if num > 0 and num < 10:
+#         return 1
+#     elif num == 0:
+#         return 0
+
+#     smallN = int(num / 10)
+#     sAns = digit(smallN)
+
+#     return sAns + 1
+
+
+# print(digit(0))
+
+
+def digitCount(num):
+    # print(num)
+    # this will handle negative value
+    num = abs(num)
+
+    # this will handle base case
+
+    if num < 10:
+        return 1
+
+    return digitCount(num // 10) + 1
+
+
+print(digitCount(-10))
