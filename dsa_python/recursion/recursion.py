@@ -60,3 +60,21 @@ myFun(1)
 
 ### IMPORTANT
 # RECURSION = RECURSION IS WHEN SOLUTION OF PROBLEM DEPENDS ON THE SAME SMALLER PROBLEM
+
+
+def factorial(n):
+
+    print(n)
+
+    if n == 1:
+        return 1
+
+    sAnswer = factorial(n - 1)
+    ans = sAnswer * n
+    return ans
+
+
+print(factorial(5))
+
+
+# No we will not be making boxes or function every time 
