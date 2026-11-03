@@ -26,3 +26,6 @@ match day:
 
     case 7:
         print("Sunday")
+
+    case _:
+        print("Looking forward to the Weekend")
